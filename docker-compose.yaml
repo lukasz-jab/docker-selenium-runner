@@ -11,7 +11,7 @@ services:
     #entrypoint: "java -cp selenium-docker-tests.jar:libs/* org.testng.TestNG testng-tour.xml"  actually in healthcheck
     working_dir: /tests
     volumes:
-      - D:\Docker\volumeTest\tour:/tests/test-output
+      - D:\Devel\docker-selenium-runner\test_result\tour:/tests/test-output
     depends_on: 
       - chrome
       - firefox
@@ -27,7 +27,7 @@ services:
     #entrypoint: "java -cp selenium-docker-tests.jar:libs/* org.testng.TestNG testng-duck.xml"   actually in healthcheck
     working_dir: /tests
     volumes:
-      - D:\Docker\volumeTest\duck:/tests/test-output
+      - D:\Devel\docker-selenium-runner\test_result\duck:/tests/test-output
     depends_on: 
       - chrome
       - firefox
