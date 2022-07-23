@@ -11,10 +11,12 @@ pipeline {
 				bat "docker-compose up --no-color tour duck"
 			}
 		}
-		stage("Stop Grid") {
-				steps {
-					bat "docker-compose down"
-				}
-			}
+	}
+	post {
+		always {
+			archiveArtifacts artifacts: '/tests/test-output/**'
+			archiveArtifacts artifacts: '/home/seluser/Downloads/**'
+			bat "docker-compose down"
 		}
 	}
+}
