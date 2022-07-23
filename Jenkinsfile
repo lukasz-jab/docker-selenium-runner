@@ -14,7 +14,7 @@ pipeline {
 	}
 	post {
 		always {
-			archiveArtifacts artifacts: '/tests/test-output/**'
+			archiveArtifacts artifacts: 'D:\Docker\volumeTest/**'
 			archiveArtifacts artifacts: '/home/seluser/Downloads/**'
 			bat "docker-compose down"
 		}
