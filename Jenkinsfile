@@ -1,12 +1,17 @@
 pipeline {
 	agent any
 	stages {
-		stage("Run Tests") {
+		stage("Run Grid") {
 			steps {
-				bat "docker-compose up --no-color"
+				bat "docker-compose up -d --no-color hub chrome firefox"
 			}
 		}
-		stage("Bring Grid Down") {
+		stage("Run Tests") {
+			steps {
+				bat "docker-compose up --no-color tour duck"
+			}
+		}
+		stage("Stop Grid") {
 				steps {
 					bat "docker-compose down"
 				}
