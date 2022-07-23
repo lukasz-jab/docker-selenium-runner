@@ -33,8 +33,6 @@ services:
       - firefox
   hub:
     image: "selenium/hub:4.3"
-    ports:
-      - "4444:4444"
   chrome: 
     image: "selenium/node-chrome:4.3"
     environment: 
