@@ -11,7 +11,7 @@ services:
     #entrypoint: "java -cp selenium-docker-tests.jar:libs/* org.testng.TestNG testng-tour.xml"  actually in healthcheck
     working_dir: /tests
     volumes:
-      - D:\Docker\volumeTest\tour:/tests/test-output
+      -D:\JENKINS_NODE1\workspace\selenium-docker-runner\tests-out\tour:/tests/test-output
     depends_on: 
       - chrome
       - firefox
@@ -27,7 +27,7 @@ services:
     #entrypoint: "java -cp selenium-docker-tests.jar:libs/* org.testng.TestNG testng-duck.xml"   actually in healthcheck
     working_dir: /tests
     volumes:
-      - D:\Docker\volumeTest\duck:/tests/test-output
+      - D:\JENKINS_NODE1\workspace\selenium-docker-runner\tests-out\duck:/tests/test-output
     depends_on: 
       - chrome
       - firefox
@@ -41,7 +41,7 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
     volumes:
-      - D:\Docker\volumeTest\downloads-chrome:/home/seluser/Downloads
+      - D:\JENKINS_NODE1\workspace\selenium-docker-runner\tests-out\downloads-chrome:/home/seluser/Downloads
     depends_on: 
       - hub
   firefox: 
@@ -52,6 +52,6 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
     volumes:
-      - .D:\Docker\volumeTest\downloads-firefox:/home/seluser/Downloads
+      - D:\JENKINS_NODE1\workspace\selenium-docker-runner\tests-out\downloads-firefox:/home/seluser/Downloads
     depends_on: 
       - hub

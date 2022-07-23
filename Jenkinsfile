@@ -14,10 +14,7 @@ pipeline {
 	}
 	post {
 		always {
-			bat "dir"
-			bat "%cd%"
-			//archiveArtifacts artifacts: 'test-out/**'
-			//archiveArtifacts artifacts: '/home/seluser/Downloads/**'
+			archiveArtifacts artifacts: 'tests-out\\**'
 			bat "docker-compose down"
 		}
 	}
